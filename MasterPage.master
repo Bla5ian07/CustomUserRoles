@@ -1,0 +1,57 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Test Application - Understanding and Implementing ASP.NET custom Forms Authentication</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div align="center">
+            <table border="1px" style="border-collapse: collapse; width: 1024px">
+                <tr height="100px" bgcolor="#FFFBD6">
+                    <td align="left" valign="bottom">
+                        User&nbsp; :&nbsp;
+                        <asp:Label ID="Label1" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label><br />
+                        Roles : &nbsp;<asp:Label ID="Label2" runat="server" Font-Bold="True" Font-Italic="False"></asp:Label>
+                        <br />
+                        <br />
+                        <asp:LinkButton ID="LinkButton1" runat="server" OnClick="LinkButton1_Click">LogOut</asp:LinkButton><br />
+                        <br />
+                        <asp:Menu ID="Menu1" runat="server" BackColor="#FFFBD6" DynamicHorizontalOffset="2"
+                            Font-Names="Verdana" ForeColor="#990000" Orientation="Horizontal"
+                            StaticSubMenuIndent="10px" Width="44%">
+                            <StaticSelectedStyle BackColor="#FFCC66" />
+                            <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                            <DynamicMenuStyle BackColor="#FFFBD6" />
+                            <DynamicSelectedStyle BackColor="#FFCC66" />
+                            <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                            <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                            <Items>
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/BronzeUsers/Default.aspx" Text="Bronze" Value="Bronze">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/SilverUsers/Default.aspx" Text="Silver" Value="Silver">
+                                </asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/GoldUsers/Default.aspx" Text="Gold" Value="Gold"></asp:MenuItem>
+                                <asp:MenuItem NavigateUrl="~/PlatinumUsers/Default.aspx" Text="Platinum" Value="Platinum">
+                                </asp:MenuItem>
+                            </Items>
+                        </asp:Menu>
+                    </td>
+                </tr>
+                <tr height="700px">
+                    <td align="left" valign="top">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr height="20px">
+                    <td>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
